@@ -11,30 +11,75 @@
 \usetheme{Madrid}
 \usepackage{dirtree}
 % Color
-\definecolor{flatgreen}{RGB}{38, 222, 125}
-\usecolortheme[named=flatgreen]{structure}
+\definecolor{flatgreen}{RGB}{210, 247, 219}
+\definecolor{flashygreen}{RGB}{30, 215, 95}
+\usecolortheme[named=flashygreen]{structure}
 % Font
 \usepackage{emoji}
+
+% Digicomp font
 \usepackage{fontspec}
+\setmainfont[Path=/home/chrichri/Documents/Digicomp/Linux 2/style/]{Poppins-Regular.ttf}
+[Ligatures=TeX,
+    BoldFont=Poppins-Bold.ttf,
+    ItalicFont=Poppins-Italic.ttf]
+
+% Custom header and footer
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+\setbeamercolor{section in head/foot}{fg=black, bg=flatgreen}
+
+% Modify Beamer template
+% Items
+\setbeamertemplate{itemize items}[square]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subsubitem}[triangle]
+% TOC
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[square]
+% Title
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+
 \usepackage{csquotes}
-\setsansfont{Garamond Libre}
+
 % Code
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=flatgreen,
-    filecolor=flatgreen,
-    urlcolor=flatgreen,
-    citecolor=flatgreen
+    linkcolor=flashygreen,
+    filecolor=flashygreen,
+    urlcolor=flashygreen,
+    citecolor=flashygreen
 }
 \definecolor{flatgreyish}{RGB}{209, 216, 224}
+
+% Monokai colors as per https://gist.github.com/r-malon/8fc669332215c8028697a0bbfbfbb32a
+\definecolor{monokaiComments}{RGB}{121, 121, 121} % #797979
+\definecolor{monokaiOrange}{RGB}{232, 125, 62} % #e87d3e
+
 \lstset{
     basicstyle=\ttfamily\scriptsize,
     backgroundcolor=\color{flatgreyish},
-    keywordstyle=\color{flatgreen},        % Keywords font ('*' = uppercase)
-    commentstyle=\color{flatgreen},         % Step between two line-numbers
+    keywordstyle=\color{monokaiOrange},        % Keywords font ('*' = uppercase)
+    commentstyle=\color{monokaiComments},         % Step between two line-numbers
     columns=fullflexible,
     breaklines=true,
     showstringspaces=false
