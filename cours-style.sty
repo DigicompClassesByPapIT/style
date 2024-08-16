@@ -16,10 +16,14 @@
 \usecolortheme[named=flashygreen]{structure}
 % Font
 \usepackage{emoji}
+\usepackage{currfile-abspath}
+\getpwd
 
+% Concatenate style path to \thepwd
+\newcommand{\stylepath}{\thepwd../style/}
 % Digicomp font
 \usepackage{fontspec}
-\setmainfont[Path=/home/chrichri/Documents/Digicomp/Linux 2/style/]{Poppins-Regular.ttf}
+\setmainfont[Path=\stylepath]{Poppins-Regular.ttf}
 [Ligatures=TeX,
     BoldFont=Poppins-Bold.ttf,
     ItalicFont=Poppins-Italic.ttf]
