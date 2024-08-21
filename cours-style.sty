@@ -6,23 +6,23 @@
 \ExplSyntaxOff
 
 % Style
-\usepackage{xcolor}
+\RequirePackage{xcolor}
 
 \usetheme{Madrid}
-\usepackage{dirtree}
+\RequirePackage{dirtree}
 % Color
 \definecolor{flatgreen}{RGB}{210, 247, 219}
 \definecolor{flashygreen}{RGB}{30, 215, 95}
 \usecolortheme[named=flashygreen]{structure}
 % Font
-\usepackage{emoji}
-\usepackage{currfile-abspath}
+\RequirePackage{emoji}
+\RequirePackage{currfile-abspath}
 \getpwd
 
 % Concatenate style path to \thepwd
 \newcommand{\stylepath}{\thepwd../style/}
 % Digicomp font
-\usepackage{fontspec}
+\RequirePackage{fontspec}
 \setmainfont[Path=\stylepath]{Poppins-Regular.ttf}
 [Ligatures=TeX,
     BoldFont=Poppins-Bold.ttf,
@@ -60,12 +60,12 @@
 % Title
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 
-\usepackage{csquotes}
+\RequirePackage{csquotes}
 
 % Code
-\usepackage{listings}
-\usepackage{graphicx}
-\usepackage{hyperref}
+\RequirePackage{listings}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=flashygreen,
@@ -93,13 +93,13 @@
 \addtobeamertemplate{background canvas}{\transfade[duration=1]}{}
 
 % Highlight
-\usepackage[most]{tcolorbox}
-\usepackage{cleveref}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{cleveref}
 \crefformat{footnote}{#2\footnotemark[#1]#3}
 % Define a new command that return a superscripted ", " (comma and space)
 \newcommand{\footnotestep}{\textsuperscript{, }}
-\usepackage{amsmath}
-\usepackage{wasysym}
+\RequirePackage{amsmath}
+\RequirePackage{wasysym}
 \definecolor{flatorange}{RGB}{255, 165, 2}
 \definecolor{flatred}{RGB}{255, 71, 87}
 \tcbset{textmarker/.style={%
